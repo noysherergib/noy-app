@@ -1,0 +1,122 @@
+/* 1. Main container for the whole page */
+.main {
+  width: 100%;
+  max-width: 1400px; /* A bit wider for a gallery */
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* 2. THE DYNAMIC GRID (This is the magic!) */
+.artGrid {
+  display: grid;
+  
+  /*
+    This line is the core of the solution:
+    - 'repeat(auto-fit, ...)' says "create as many columns as you can."
+    - 'minmax(300px, 1fr)' says "each column must be at least 300px wide,
+      but can grow to be 1 equal fraction (1fr) of the space."
+    
+    This will give you 3-4 columns on a normal desktop, 2 on a tablet,
+    and 1 on a phone, all without any extra code!
+  */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  
+  /* This is the space between the cards */
+  gap: 2.5rem;
+}
+
+/* 3. The Art Piece "Card" */
+.artPiece {
+  background: #ffffff;
+  border-radius: 12px;
+  /* A nice, subtle shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* This is crucial: it keeps the image's rounded corners */
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column; /* Stack image on top of text */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.artPiece:hover {
+  transform: translateY(-8px); /* Lifts the card on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* 4. FIXING THE IMAGE (Your "images too big" problem) */
+.artImage {
+  width: 100%;
+  height: 300px; /* Give the image a fixed height */
+  
+  /*
+    This is the most important part!
+    'object-fit: cover' makes the image fill the 300px height
+    without stretching or squashing. It will crop the image to fit.
+  */
+  object-fit: cover; 
+  background-color: #f0f0f0; /* A placeholder color */
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: #888;
+  font-style: italic;
+}
+
+/* 5. STYLING THE TEXT (Your "text under images" request) */
+.artInfo {
+  padding: 1.5rem;
+  /* This ensures all cards have the same text-area height */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
+}
+
+.artTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  
+  /* This will cut off very long titles with a "..." */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artArtist {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artDetails {
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.5;
+  
+  /* This pushes details to the bottom of the card */
+  margin-top: auto; 
+}
+
+.artDetails p {
+  margin: 0.25rem 0;
+}
