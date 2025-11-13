@@ -19,7 +19,7 @@
 body {
   color: var(--color-primary);
   background-color: var(--color-background);
-  font-family: var(--font-body);
+  font-family: 'Segoe UI', sans-serif;
 }
 
 /* Layout */
@@ -83,7 +83,6 @@ li {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {

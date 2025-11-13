@@ -1,56 +1,83 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React from 'react';
+import styles from './page.module.css'; 
+
+export default function Page() {
+
+  // פונקציה לניווט
+  const handleNavigate = (path: string) => {
+    console.log(`Navigating to: ${path}`);
+    window.location.href = path; 
+  };
+
   return (
-    <main>
-      <div>
-        <h2>Welcome to the Product Jam Starter Kit</h2>
-        <p>
-          Feel free to look around, edit the source code and navigate to the
-          demos.
-        </p>
-        <Image
-          src="/huji.svg"
-          alt="HUJI Logo"
-          width="80"
-          height="80"
-          priority
-        />
-        <Image
-          src="/bezalel.svg"
-          alt="Bezalel Logo"
-          className="item"
-          width="80"
-          height="80"
-          priority
-        />
-        <div>
-          <h2>Lorem Ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            faucibus sit amet nunc nec vehicula. Fusce ornare nec nulla non
-            imperdiet. Fusce vel sodales justo. Sed efficitur arcu lorem, at
-            iaculis odio ultricies et. Duis rutrum urna nec elit bibendum, sed
-            hendrerit nulla posuere. Vestibulum vestibulum, ante non tincidunt
-            posuere, dui arcu lacinia nisl, nec rhoncus massa arcu ac ipsum. Nam
-            congue interdum tortor, eu dignissim massa scelerisque vitae. Sed
-            ultricies bibendum congue. Praesent non magna id ligula maximus
-            luctus. Donec vitae nibh quis neque luctus sagittis et eget nunc.
-            Aliquam id ullamcorper lacus. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Pellentesque habitant morbi tristique
-            senectus et netus et malesuada fames ac turpis egestas. Curabitur
-            tempor quis dolor a lacinia.
-          </p>
-          <ul>
-            <li>
-              Aliquam maximus tellus sed lacus venenatis, ac cursus eros mollis.
-            </li>
-            <li>In id ante sed sem pharetra molestie et vitae arcu.</li>
-            <li>Cras pharetra turpis at pretium elementum.</li>
-            <li>Donec ultrices felis vel lectus auctor iaculis.</li>
-          </ul>
+    <div className={styles.homeContainer}>
+      <div className={styles.contentWrapper}>
+        <h1 className={styles.mainTitle}>Welcome Home</h1>
+        <p className={styles.subtitle}>Select a destination to begin</p>
+
+        <div className={styles.cardGrid}>
+          
+          {/* Card 1: Museum App */}
+          <div 
+            className={styles.card} 
+            onClick={() => handleNavigate('/app')}
+          >
+            <div className={styles.cardImageContainer}>
+              <img 
+                src="/images/museum.png" 
+                alt="Museum App" 
+                className={styles.cardImage} 
+              />
+              <div className={styles.cardOverlay}></div>
+            </div>
+            <div className={styles.cardContent}>
+              <h3>Museum App</h3>
+              <p>Explore the Museum.</p>
+            </div>
+          </div>
+
+          {/* Card 2: Tic-Tac-Toe */}
+          <div 
+            className={styles.card} 
+            onClick={() => handleNavigate('/tic-tac-toe')}
+          >
+            <div className={styles.cardImageContainer}>
+              <img 
+                src="/images/tic-tac-toe.png" 
+                alt="Tic Tac Toe" 
+                className={styles.cardImage} 
+              />
+              <div className={styles.cardOverlay}></div>
+            </div>
+            <div className={styles.cardContent}>
+              <h3>Tic-Tac-Toe</h3>
+              <p>Play Tic-Tac-Toe.</p>
+            </div>
+          </div>
+
+          {/* Card 3: Design */}
+          <div 
+            className={styles.card} 
+            onClick={() => handleNavigate('/design')}
+          >
+            <div className={styles.cardImageContainer}>
+              <img 
+                src="/images/sketch.png" 
+                alt="Design Studio" 
+                className={styles.cardImage} 
+              />
+              <div className={styles.cardOverlay}></div>
+            </div>
+            <div className={styles.cardContent}>
+              <h3>Design Studio</h3>
+              <p>Figma Implementation.</p>
+            </div>
+          </div>
+
         </div>
       </div>
-    </main>
+    </div>
   );
 }
