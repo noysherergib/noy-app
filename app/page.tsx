@@ -22,7 +22,7 @@ export default function Page() {
           {/* Card 1: Museum App */}
           <div 
             className={styles.card} 
-            onClick={() => handleNavigate('/app')}
+            onClick={() => handleNavigate('/art')}
           >
             <div className={styles.cardImageContainer}>
               <img 

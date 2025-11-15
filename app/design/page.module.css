@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Noto+Sans+Hebrew:wght@400;600&display=swap');
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 0px 35px 0px 35px;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  direction: rtl;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 177px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #D92028;
+}
+
+.logo {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 8px;
+}
+
+
+.logoDiamond {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  transform: rotate(-45deg);
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+.logoHorizontalBar {
+  width: 53px;
+  height: 17px;
+  background: #fff;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+}
+
+
+.logoVerticalBar {
+  width: 17px;
+  height: 53px;
+  background: #fff;
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
+}
+
+.logoSquare {
+  width: 52px;
+  height: 53px;
+  background: #fff;
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+}
+
+.appTitle {
+  display: flex;
+  width: auto;
+  height: 31px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-family: 'Noto Sans Hebrew', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  padding-top: 29px;
+  padding-bottom: 0;
+
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 12px;
+  direction: rtl
+}
+
+.sectionTitle {
+  color: #D92028;
+  text-align: center;
+  font-family: 'Noto Sans', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  
+}
+
+.sectionTitleUnderline {
+  width: 60px;
+  height: 13px;
+  background: #D92028;
+}
+
+.bodyText {
+  color: #D92028;
+  text-align: right;
+  font-family: 'Noto Sans', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 136.363%;
+  margin-bottom: 0px;
+}
+
+.highlightText {
+  color: #D92028;
+  text-align: center;
+  font-family: 'Noto Sans Hebrew', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 50px;
+  line-height: normal;
+}
+
+.bulletItem {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.bulletText {
+  color: #D92028;
+  text-align: center;
+  font-family: 'Noto Sans', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 136.363%;
+  margin: 10px;
+  text-align: right;
+}
+
+.bulletIcon {
+  width: 10px;
+  height: 11px;
+  transform: rotate(-45deg);
+  background: #D92028;
+  flex-shrink: 0;
+}
