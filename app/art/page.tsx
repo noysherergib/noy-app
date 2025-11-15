@@ -14,7 +14,7 @@ type ArtObject = {
 };
 
 
-export async function getArtData(departmentId: string, count: number) {
+async function getArtData(departmentId: string, count: number) {
   // Fetch object IDs for the specified department
   const objectResDep = await fetch(`${process.env.BASE_MET_API_URL}?departmentIds=${departmentId}`);
 
